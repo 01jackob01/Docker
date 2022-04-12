@@ -13,8 +13,13 @@ services:
     container_name: mysql
     image: mysql:5.7
     restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: haslohaslo123
     ports:
       - "3307:3306"
+    command: ["mysqld", "--default-authentication-plugin=mysql_native_password"]
+    volumes:
+      - db-vol:/var/lib/mysql
 
   phpmyadmin:
     container_name: phpmyadmin
@@ -22,3 +27,6 @@ services:
     restart: always
     ports:
       - "8081:80"
+
+volumes:
+  db-vol:
