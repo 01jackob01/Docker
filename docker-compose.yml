@@ -3,7 +3,7 @@ version: '3.1'
 services:
   web:
     container_name: apache
-    image: projekt
+    image: apache_php
     ports:
       - "80:80"
     volumes:
@@ -12,14 +12,15 @@ services:
   db:
     container_name: mysql
     image: mysql:5.7
+    command: --default-authentication-plugin=mysql_native_password
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: haslohaslo123
     ports:
       - "3307:3306"
-    command: ["mysqld", "--default-authentication-plugin=mysql_native_password"]
     volumes:
       - db-vol:/var/lib/mysql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
 
   phpmyadmin:
     container_name: phpmyadmin
@@ -30,3 +31,5 @@ services:
 
 volumes:
   db-vol:
+  db:
+    driver: local

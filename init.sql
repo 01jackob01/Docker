@@ -1,0 +1,14 @@
+CREATE USER 'userwww'@'%' IDENTIFIED BY 'haslohaslo123';
+GRANT ALL PRIVILEGES ON *.* TO 'userwww'@'%';
+FLUSH PRIVILEGES;
+ALTER USER 'userwww'@'%' IDENTIFIED WITH mysql_native_password BY 'haslohaslo123';
+CREATE USER 'www'@'%' IDENTIFIED BY 'haslohaslo123';
+GRANT ALL PRIVILEGES ON *.* TO 'www'@'%';
+FLUSH PRIVILEGES;
+ALTER USER 'www'@'%' IDENTIFIED WITH mysql_native_password BY 'haslohaslo123';
+CREATE USER 'import'@'%' IDENTIFIED BY 'haslohaslo';
+GRANT ALL PRIVILEGES ON *.* TO 'import'@'%';
+FLUSH PRIVILEGES;
+ALTER USER 'import'@'%' IDENTIFIED WITH mysql_native_password BY 'haslohaslo';
+ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY 'haslohaslo123';
+FLUSH PRIVILEGES;
