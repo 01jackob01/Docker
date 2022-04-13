@@ -28,3 +28,15 @@
 Odpalenie w tle ``docker-compose up -d``
 
 Oddpalenie z komunikatami ``docker-compose up``
+
+## Import bazy
+
+1. ``sudo docker cp db.sql mysql:/var/opt/mysql.backup``
+2. ``docker exec -it mysql bash``
+3. ``mysql -u root -p``
+4. ``create database DB_NAME``
+5. ``use DB_NAME``
+6. ``source /var/opt/mysql.backup``
+
+Krótka ersja
+``docker exec -i <nazwa_kontynera> mysql -uroot -p<hasło> <nazwa bazy danych> < importDir/db.sql``
