@@ -2,7 +2,7 @@ FROM ubuntu:xenial
 
 # Install apache, PHP, and supplimentary programs. openssh-server, curl, and lynx-cur are for debugging the container.
 RUN apt-get update && apt-get -y upgrade && DEBIAN_FRONTEND=noninteractive apt-get -y install \
-    apache2 software-properties-common php7.0 libapache2-mod-php7.0 php7.0-mysql php7.0-gd php7.0-json php7.0-curl php7.0-xml php7.0-mbstring php-xdebug php7.0-soap php7.0-bcmath mysql-server mysql-client
+    apache2 software-properties-common php7.0 libapache2-mod-php7.0 php7.0-mysql php7.0-gd php7.0-json php7.0-curl php7.0-xml php7.0-mbstring php-xdebug php7.0-soap php7.0-bcmath mariadb-server mariadb-client
 
 # Enable apache mods.
 RUN a2enmod php7.0
