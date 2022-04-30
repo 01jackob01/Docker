@@ -13,6 +13,18 @@
 2. W ustawieniach -> General sprawdzić czy wlączona jest opcja "Use the WSL 2 based engine"
 3. W ustawieniach -> Resources -> wsl integration zaznaczyć nasze ubuntu
 
+## Tworzenie klucza do GITa
+
+1. ``ssh-keygen -t ed25519 -C "test@mail.pl"``
+2. ``eval "$(ssh-agent -s)"``
+3. ``ssh-add ~/.ssh/id_ed25519``
+4. Skopiować zawartość ``~/.ssh/id_ed25519.pub`` do GitHub Settings -> SSH and GPG key -> New SSH key
+5. Test połączenia ``ssh -T git@github.com``
+
+1.``ssh-keygen``
+2. ``cat ~/.ssh/id_rsa.pub``
+3. ``ssh-keyscan github.com >> ~/keys/known_hosts``
+
 ## Instalacja projektu
 
 1. Komenda w wsl ``docker build -t apache_php .``
