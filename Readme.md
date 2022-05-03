@@ -4,8 +4,7 @@
 2. Odpalić PowerShell jak administrator -> "Enable-WindowsOptionalFeature -Online -FeatureName VirtualMachinePlatform" i restart komputera
 3. Pobrać i zainstalować https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi
 4. W powershell odpalić "wsl --set-default-version 2"
-5  W sklepie Microsoftu zainstalować Ubuntu 20.04 -> uruchomić Ubuntu i dodać użytkownika systim hasło swoje
-5. Przenieść do wsl przy pomocy komendy cp lub w dokumentach wejśc przez \\wsl$\Ubuntu-20.04\home\test folder aplikacji
+5. W sklepie Microsoftu zainstalować Ubuntu 20.04 -> uruchomić Ubuntu i dodać użytkownika systim hasło swoje
 
 ## Instalacja docker desktop
 
@@ -50,5 +49,27 @@ Oddpalenie z komunikatami ``docker-compose up``
 5. ``use DB_NAME``
 6. ``source /var/opt/mysql.backup``
 
-Krótka ersja
+Krótka wersja
 ``docker exec -i <nazwa_kontynera> mysql -uroot -p<hasło> <nazwa bazy danych> < importDir/db.sql``
+
+## Konfiguracja xDebug dla PHPStorm
+
+1. W ustawieniach->PHP->Debug ustawić port 9003 i checkbox "Can accept external connections"
+2. W ustwieniach->Build,Execu...->Docker ustawić patch mapings Virtual machne na \var\www\site a komputer na \Projekt\www
+
+## Konfiguracja xDebug dla Visual Studo
+
+1. Zainstalować rzszerzenie PHP Debug
+2. Utworzyć plik launch.json dla "Docker: Debug in Container"
+3. Dodać w konfiguracji
+```
+{
+    "name": "Listen for XDebug on Docker",
+    "type": "php",
+    "request": "launch",
+    "port": 9003,
+    "pathMappings": {
+        "/var/www/site/": "${workspaceFolder}/www"
+    }
+}
+```
