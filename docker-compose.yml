@@ -7,15 +7,15 @@ services:
     ports:
       - "80:80"
     volumes:
-      - "./www:/var/www/site"
+      - "./code:/var/www/code"
 
   db:
     container_name: mariadb
     image: mariadb:10.5.15
-    command: --default-authentication-plugin=mysql_native_password
+    command: mysqld --sql_mode=NO_ENGINE_SUBSTITUTION --default-authentication-plugin=mysql_native_password
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: haslohaslo123
+      MARIADB_ROOT_PASSWORD: haslohaslo123
     ports:
       - "3306:3306"
     volumes:
