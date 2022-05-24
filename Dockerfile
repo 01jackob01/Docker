@@ -2,7 +2,7 @@ FROM ubuntu:20.04
 
 # Install apache, PHP, and supplimentary programs. openssh-server, curl, and lynx-cur are for debugging the container.
 RUN apt-get update && apt-get -y upgrade && DEBIAN_FRONTEND=noninteractive apt-get -y install \
-    apache2 software-properties-common php7.4 libapache2-mod-php7.4 php7.4-mysql php7.4-gd php7.4-json php7.4-curl php7.4-xml php7.4-mbstring php7.4-soap php7.4-bcmath mariadb-server mariadb-client php-pear php-dev
+    apache2 software-properties-common php7.4 php-pear php-dev
 
 RUN pecl install xdebug
 
@@ -11,11 +11,6 @@ RUN a2enmod php7.4
 RUN a2enmod rewrite
 
 RUN apt-get install -y mc nano
-
-# Update the PHP.ini file, enable <? ?> tags and quieten logging.
-RUN sed -i "s/short_open_tag = Off/short_open_tag = On/" /etc/php/7.4/apache2/php.ini
-RUN sed -i "s/error_reporting = .*$/error_reporting = E_ERROR | E_WARNING | E_PARSE/" /etc/php/7.4/apache2/php.ini
-
 
 RUN echo "zend_extension='/usr/lib/php/20190902/xdebug.so'" >> /etc/php/7.4/apache2/php.ini
 RUN echo "xdebug.mode=debug,develop" >> /etc/php/7.4/apache2/php.ini
@@ -37,7 +32,7 @@ EXPOSE 80
 ENV PHP_XDEBUG_ENABLED: 1
 
 # Copy this repo into place.
-ADD www /var/www/site
+RUN mkdir /var/www/mario
 
 # Update the default apache site with the config we created.
 ADD apache-config.conf /etc/apache2/sites-enabled/000-default.conf

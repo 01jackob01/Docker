@@ -3,33 +3,9 @@ version: '3.1'
 services:
   web:
     container_name: apache
-    image: apache_php
+    image: apache_mario
+    restart: always
     ports:
       - "80:80"
     volumes:
-      - "./www:/var/www/site"
-
-  db:
-    container_name: mariadb
-    image: mariadb:10.5.15
-    command: --default-authentication-plugin=mysql_native_password
-    restart: always
-    environment:
-      MYSQL_ROOT_PASSWORD: haslohaslo123
-    ports:
-      - "3306:3306"
-    volumes:
-      - db-vol:/var/lib/mariadb
-      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
-
-  phpmyadmin:
-    container_name: phpmyadmin
-    image: phpmyadmin/phpmyadmin:latest
-    restart: always
-    ports:
-      - "8081:80"
-
-volumes:
-  db-vol:
-  db:
-    driver: local
+      - "./mario_js:/var/www/mario"
