@@ -26,7 +26,7 @@
 
 ## Instalacja projektu
 
-1. Komenda w wsl ``docker build -t apache_php .``
+1. Komenda w wsl ``docker build -t apache_mario .``
 2. W ``C:\Windows\System32\drivers\etc\hosts`` dodać na końcu linijki
 ```
 127.0.0.1 localhost.test.pl
