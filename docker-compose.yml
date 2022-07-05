@@ -4,6 +4,9 @@ services:
   web:
     container_name: apache
     image: apache_php
+    restart: always
+    environment:
+      - PHP_IDE_CONFIG=serverName=localhost.test
     ports:
       - "80:80"
     volumes:

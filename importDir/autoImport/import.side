@@ -1,0 +1,62 @@
+{
+  "id": "245f9aa2-9042-42c4-b324-8b27128a4389",
+  "version": "2.0",
+  "name": "import",
+  "url": "",
+  "tests": [{
+    "id": "f9dc6b87-8c12-40a5-9d20-8f48a4ab5fc5",
+    "name": "import",
+    "commands": [{
+      "id": "02702854-cec5-4d70-96d5-f9094f21be6a",
+      "comment": "",
+      "command": "open",
+      "target": "file:///#ABSOLUTEPATCH#autoImport/tmpLogin.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "99e3304d-c2c4-49c9-957b-331d771f3fea",
+      "comment": "",
+      "command": "open",
+      "target": "localhost:8081/db_export.php?db=#DB#",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "94b5dbd1-26ba-40bc-bbba-a55d0635c238",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "id=buttonGo",
+      "targets": [],
+      "value": "30000"
+    }, {
+      "id": "561403c5-9f5a-4e83-a7b9-f2cc17b46607",
+      "comment": "",
+      "command": "click",
+      "target": "id=buttonGo",
+      "targets": [
+        ["id=buttonGo", "id"],
+        ["css=#buttonGo", "css:finder"],
+        ["xpath=//input[@id='buttonGo']", "xpath:attributes"],
+        ["xpath=//div[@id='submit']/input", "xpath:idRelative"],
+        ["xpath=//div[7]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fbf35ed7-1a28-4540-a93d-3cb8ba0e012a",
+      "comment": "",
+      "command": "pause",
+      "target": "10000",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "75d47966-ef89-4c57-b8fb-dfd2ec614a29",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["f9dc6b87-8c12-40a5-9d20-8f48a4ab5fc5"]
+  }],
+  "urls": ["localhost:8081"],
+  "plugins": []
+}

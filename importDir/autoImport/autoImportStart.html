@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Start</title>
+</head>
+<body onload="postFromQueryString('localhost:8081/index.php')">
+    <script>
+        function postFromQueryString(url) {
+
+            var user = '#0#';
+            var pass = "#1#";
+            pass = atob(pass);
+
+            // create a form
+            var formToPost = document.createElement("form");
+            formToPost.method="post";
+            formToPost.action = url;
+
+            var name = ['pma_username', 'pma_password', 'server', 'target', 'token'];
+            var value = [user.replace(/\s/g, ''), pass.replace(/\s/g, ''), '1', 'main.php', '87740a462a5c185b26d8e61fb2afea10'];
+
+            // add params to form
+            for (var i = 0 ; i < 5 ; i++) {
+                var postInput = document.createElement("input");
+                postInput.setAttribute("name", name[i]);
+                postInput.setAttribute("value", value[i]);
+                formToPost.appendChild(postInput);
+            }
+
+            // Execute
+            document.body.appendChild(formToPost);
+            formToPost.submit();
+            document.body.removeChild(formToPost);
+        }
+    </script>
+</body>
+</html>

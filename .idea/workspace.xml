@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="51c7d329-aa53-4fbf-9cfe-82e68b655d14" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/importDir/MLdbTools.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/importDir/autoImport/autoImportStart.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/importDir/autoImport/import.side" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/importDir/dbTools.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/importDir/sqlExecute/changePass.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/importDir/sqlExecute/clearDb.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/importDir/sqlExecute/history.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/installDir/.wslconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/installDir/apache-config-local.conf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/installDir/chromedriver.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/installDir/init.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/installDir/pdftohtml2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/Readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apache-config.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/init.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/index.php" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2BWHFbwxfOPNLQWonzRJbNPZoSX" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\kuba\PhpstormProjects\GitHub\Docker" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="51c7d329-aa53-4fbf-9cfe-82e68b655d14" name="Changes" comment="" />
+      <created>1657014818518</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1657014818518</updated>
+      <workItem from="1657014819751" duration="149000" />
+      <workItem from="1657014972577" duration="1349000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

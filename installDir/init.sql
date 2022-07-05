@@ -1,0 +1,7 @@
+CREATE USER 'user'@'%' IDENTIFIED BY 'userhaslo';
+GRANT ALL PRIVILEGES ON *.* TO 'user'@'%';
+FLUSH PRIVILEGES;
+
+CREATE USER 'import'@'%' IDENTIFIED BY 'importhaslo';
+GRANT ALL PRIVILEGES ON *.* TO 'import'@'%';
+FLUSH PRIVILEGES;
