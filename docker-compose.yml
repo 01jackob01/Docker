@@ -23,7 +23,7 @@ services:
       - "3306:3306"
     volumes:
       - db-vol:/var/lib/mariadb
-      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./installDir/init.sql:/docker-entrypoint-initdb.d/init.sql
 
   phpmyadmin:
     container_name: phpmyadmin

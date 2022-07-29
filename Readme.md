@@ -25,7 +25,7 @@ git clone -b master
 
 # Pierwsze odpalenie localhost
 
-Wykonać komendy ``wsl -e ln importDir/dbTools.bat ftpprod/dbTools.bat`` (po wykonaniu komendy można wykonywać dbTools.bat bezpośrednio z folderu ftpprod)
+Wykonać komendy ``wsl -e ln importDir/dbTools.bat ftpprod/dbTools.bat`` (po wykonaniu komendy można wykonywać dbTools.bat bezpośrednio z folderu ftpprod)  
 
 Następnie ``cmd.exe /c "mklink /D ftpprod\i images"`` jeżeli wyskoczy komunikat o barku uprawnień należy odpalić cmd jako administrator przejść do folderu docker i ponownie wykonać komendę
 
@@ -35,15 +35,15 @@ Kolejne uruchomienia jeżeli jest taka potrzeba wykonujemy bezpośrednio z aplik
 
 # DB tools
 
-### Import produkcyjnej bazy klienta
+### Import produkcyjnej bazy klienta 
 
 ``dbTools.bat <numer/nazwa klienta>`` lub ``dbTools.bat import <numer/nazwa klienta>`` np. ``dbTools.bat demo`` po odpaleniu komendy otwiera się przeglądarka w której logujemy się do phpmyadmin następnie przechodzimy do zakładki eksport i nic nie zminiając wykonujemy eksport do pliku sql, po pobraniu wracamy do konsoli i klikamy enter aby kontynuować. Baza zostanie automatycznie zaimportowana z folderu pobrane w windows następnie usunięta z tego folderu.
 
-### Import bazy z pliku
+### Import bazy z pliku 
 
 ``dbTools.bat importFile <nazwa pliku>`` np. ``dbTools.bat importFile demo`` baza musi znajdować się w folderze importDir\localDb i mieć nazwę pliku taką samą jak podajemy w skrypcie np. ``demo.sql``
 
-### Eksport bazy do pliku sql
+### Eksport bazy do pliku sql 
 
 ``dbTools.bat exportFile <nazwa pliku>`` np. ``dbTools.bat exportFile demo`` druga cześć komendy to nazwa jaką będzie miał nasz plik po wyeksportowaniu
 
@@ -56,7 +56,7 @@ Kolejne uruchomienia jeżeli jest taka potrzeba wykonujemy bezpośrednio z aplik
 
 ### Czyszczenie lokalnych plików baz danych
 
-``dbTools.bat importFileClear`` komenda kasuje wszystkie lokalne pliki baz danych z wyłączeniem bazy demo.sql (kasowanie lokalnych plików nie wpływa na bazę już zaimportowaną do dockera)
+``dbTools.bat importFileClear`` komenda kasuje wszystkie lokalne pliki baz danych (kasowanie lokalnych plików nie wpływa na bazę już zaimportowaną do dockera)
 
 ### Automatyczny import bazy/Automatyczne logowanie
 
@@ -64,9 +64,35 @@ Aby system automatycznie nas logował podczas pobierania bazy przy użyciu ``dbT
 
 Aby działało pełne automatyczne pobieranie ``dbTools.bat autoImport <numer/nazwa klienta>`` np. ``dbTools.bat autoImport demo`` należy w pierwszej kolejności zainstalować node.js w wersji 17 (https://nodejs.org/dist/v17.9.1/node-v17.9.1-x64.msi) i potem wykonać komendę `` .\dbTools.bat enableAutoImport <login_do_phpmyadmin> <hasło_do_phpmyadmin>`` komendę należy odpalić w CMD jako administrator będąc w folderze importDir
 
-### PHPMyadmin
+### PHPMyadmin 
 
 znajduje się pod adresem ``localhost:8081`` Login: ``root`` Hasło: ``haslohaslo123 ``
+
+# Log Tools
+
+### Przeglądanie logów
+
+Loklany folder z logami znajduje się w głównym katalogu dockera w folderze ``logs`` jest on połączony z dockerem więc aktualizuje się na żywo
+
+### Pobieranie logów do plików lokalnych
+
+``.\logTools.bat getLogs`` komenda pobiera error logi apacha do lokalnego folderu ``/logs/localLogs/``
+
+### Czyszczenie lokalnego folderu z logami
+
+``.\logTools.bat clearLocalLogs`` komenda czyści error logi apacha z lokalnego folderu ``/logs/localLogs/``
+
+### Czyszczenie error logów na serwerze
+
+``.\logTools.bat clearLogs`` komenda czyści error logi apacha w dockerze
+
+### Pokazywanie wyszystkich fatal error w pliku
+
+``.\logTools.bat showAllErrors``komenda pokazuje wszystkie fatal errory w logach apacha na dockerze
+
+### Wyszukiwanie fatal error w pliku
+
+``.\logTools.bat searchErrors <dzień> <miesiac>`` np. ``.\logTools.bat searchErrors 4 9``komenda wyszukuje wszystkie fatal errory w logach apacha na dockerze 
 
 # Konfiguracja xDebug dla PHPStorm
 
@@ -97,7 +123,7 @@ znajduje się pod adresem ``localhost:8081`` Login: ``root`` Hasło: ``haslohasl
 
 ### Przenoszenie plików z Windows do Docker:
 
-W przypadku plików które chcemy mieć w /var/www/code wystarczy dodać taki plik do folderu ftpprod
+W przypadku plików które chcemy mieć w /home/systim/systim wystarczy dodać taki plik do folderu ftpprod
 
 W innych przypadkach wykonać komendę ``docker cp <scieżka pliku windows> apache:<scieżka pliku debian>``
 
@@ -113,6 +139,6 @@ Wejście do mariadb jako admin (możliwość wykonywania zapytań sql) ``mysql -
 
 Komenda wejścia do apache/php ``docker exec -it apache bash``
 
-Kopiowanie plików do apache/php ``docker cp <scieżka pliku windows> apache:<scieżka pliku apache>`` np ``docker cp ./tmp apache:/var/www/code``
+Kopiowanie plików do apache/php ``docker cp <scieżka pliku windows> apache:<scieżka pliku apache>`` np ``docker cp ./tmp apache:/home/systim``
 
-Kopiowanie plików z apache/php do windows ``docker cp apache:<scieżka pliku apache> <scieżka pliku windows>`` np ``docker cp apache:/var/www/code ./``
+Kopiowanie plików z apache/php do windows ``docker cp apache:<scieżka pliku apache> <scieżka pliku windows>`` np ``docker cp apache:/home/systim/tmp ./``

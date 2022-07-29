@@ -23,6 +23,7 @@ IF NOT EXIST %dir%localDb (
 )
 :: Set type of script execution
 SET type=0
+IF "%1"=="help" SET type=0
 IF "%1"=="import" SET type=1
 IF "%1"=="importFile" SET type=2
 IF "%1"=="exportFile" SET type=3
@@ -34,13 +35,39 @@ IF "%1"=="enableAutoImport" SET type=8
 
 :: Set DB name to download
 SET db=%2
-if %type%==0 SET db=%1
-if %type%==0 SET type=1
+IF %type%==0 (
+    IF NOT "%1"=="help" SET db=%1
+)
+IF %type%==0 (
+    IF NOT "%db%"=="" SET type=1
+)
 
 :: Set limit for history
 SET limit=%2
 if "%limit%"=="" SET limit=10
 
+:: Help
+IF %type%==0 (
+    ECHO Dostepne komendy
+    ECHO ----------------------------------------------------------------------------------------------------------
+    ECHO "<numer/nazwa klienta>" lub "import <numer/nazwa klienta>" - np. "dbTools.bat demo" po odpaleniu komendy otwiera sie przegladarka w ktorej logujemy sie do phpmyadmin nastepnie przechodzimy do zakladki eksport i nic nie zminiajac wykonujemy eksport do pliku sql, po pobraniu wracamy do konsoli i klikamy enter aby kontynuowac. Baza zostanie automatycznie zaimportowana z folderu pobrane w windows nastapnie usunieta z tego folderu.
+    ECHO.
+    ECHO "importFile <nazwa pliku>" - np. "dbTools.bat importFile demo" baza musi znajdowac sie w folderze "importDir\localDb" i miec nazwe pliku taka sama jak podajemy w skrypcie np. demo.sql
+    ECHO.
+    ECHO "exportFile <nazwa pliku>" - np. "dbTools.bat exportFile" demo druga czesc komendy to nazwa jaka bedzie mial nasz plik po wyeksportowaniu
+    ECHO.
+    ECHO "history <limit>" lub "history" - np. "dbTools.bat history 20" [domyslny limit 10] Pokazuje historie eksportu i importu baz danych na lokalny serwer
+    ECHO.
+    ECHO "importFileList" - pokazuje liste lokalnych plikow baz danych mozliwych do zaimportowania przy pomocy komendy dbTools.bat importFile
+    ECHO.
+    ECHO "importFileClear" - komenda kasuje wszystkie lokalne pliki baz danych [kasowanie lokalnych plikow nie wplywa na baze juz zaimportowana do dockera]
+    ECHO.
+    ECHO "autoImport <numer/nazwa klienta>" - np. "dbTools.bat autoImport demo" Automatycznie pobiera baze klienta
+    ECHO.
+    ECHO "enableAutoImport <login_do_phpmyadmin> <haslo_do_phpmyadmin>" - komenda tworzy plik logowania dla komendy autoImport
+    ECHO.
+    goto End
+)
 :: Import client DB from production
 IF %type%==1 (
     IF EXIST %absolutePatch%autoImport\login.txt (

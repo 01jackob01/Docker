@@ -68,7 +68,7 @@ RUN echo "xdebug.start_with_request=yes" >> /etc/php/7.4/apache2/php.ini
 
 RUN sed -i "s/short_open_tag = Off/short_open_tag = On/g" /etc/php/7.4/cli/php.ini
 RUN sed -i "s/zlib.output_compression = Off/zlib.output_compression = on/g" /etc/php/7.4/cli/php.ini
-RUN sed -i -r "s/^error_reporting = .*/error_reporting = E_ALL \& ~E_NOTICE \& ~E_WARNING/m" /etc/php/7.4/cli/php.ini
+RUN sed -i -r "s/^error_reporting = .*/error_reporting = E_ALL \& ~E_NOTICE \& ~E_WARNING \& ~E_DEPRECATED/m" /etc/php/7.4/cli/php.ini
 
 RUN echo "zend_extension='/usr/lib/php/20190902/xdebug.so'" >> /etc/php/7.4/cli/php.ini
 RUN echo "xdebug.mode=debug,develop" >> /etc/php/7.4/cli/php.ini

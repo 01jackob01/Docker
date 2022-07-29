@@ -2,27 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="51c7d329-aa53-4fbf-9cfe-82e68b655d14" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/importDir/MLdbTools.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/importDir/autoImport/autoImportStart.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/importDir/autoImport/import.side" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/importDir/dbTools.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/importDir/sqlExecute/changePass.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/importDir/sqlExecute/clearDb.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/importDir/sqlExecute/history.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/installDir/.wslconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/installDir/apache-config-local.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/installDir/chromedriver.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/installDir/init.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/installDir/pdftohtml2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/logTools.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/Readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apache-config.conf" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/init.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/importDir/MLdbTools.sh" beforeDir="false" afterPath="$PROJECT_DIR$/importDir/MLdbTools.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/importDir/dbTools.bat" beforeDir="false" afterPath="$PROJECT_DIR$/importDir/dbTools.bat" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

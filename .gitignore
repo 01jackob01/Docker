@@ -3,3 +3,6 @@
 /importDir/autoImport.exe
 /importDir/localDb/
 /importDir/autoImport/login.txt
+/logs/apache/
+/logs/mysql/
+/logs/localLogs/
