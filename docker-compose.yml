@@ -10,8 +10,8 @@ services:
       - "./www:/var/www/site"
 
   db:
-    container_name: mariadb
-    image: mariadb:10.5.15
+    container_name: mysql
+    image: mysql
     command: --default-authentication-plugin=mysql_native_password
     restart: always
     environment:
@@ -19,7 +19,7 @@ services:
     ports:
       - "3306:3306"
     volumes:
-      - db-vol:/var/lib/mariadb
+      - db-vol:/var/lib/mysql
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
 
   phpmyadmin:
